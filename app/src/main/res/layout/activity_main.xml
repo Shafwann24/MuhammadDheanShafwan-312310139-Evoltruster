@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/play"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:text="Playing From Library"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/cbold"
+        android:layout_marginBottom="-10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/fotolib1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eiyuu-Nexus"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/cbold"
+        />
+
+    <SeekBar
+        android:id="@+id/seekBarTime"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
+        android:progressTint="#fff"
+        android:thumbTint="#fff"
+        android:backgroundTint="#fff"
+        android:layout_height="wrap_content"
+        />
+
+    
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="00:00"/>
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="00:00"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/btnPlay"
+        android:layout_marginTop="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonplay"
+        />
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/volumedown" />
+
+        <SeekBar
+            android:id="@+id/seekBarVolume"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#fff"
+            android:progressTint="#fff"
+            android:thumbTint="#fff" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/volumeup" />
+    </LinearLayout>
+    
+
+</LinearLayout>
