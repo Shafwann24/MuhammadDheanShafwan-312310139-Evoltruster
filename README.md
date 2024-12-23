@@ -72,8 +72,8 @@ dan fokus pada musik.
 o Aksi: Pengguna dapat memutar atau menjeda musik, atau memilih 
 lagu berikutnya atau sebelumnya. 
 7. Bar Navigasi 
-o Deskripsi: Bar navigasi di bagian bawah layar yang memuat tiga ikon 
-utama: Home, Library, dan Profile. 
+o Deskripsi: Bar navigasi di bagian bawah layar yang memuat 2 ikon 
+utama: Library dan Profile. 
 o Elemen Utama: 
 ▪ Home: Mengarahkan ke halaman utama. 
 ▪ Library: Membawa pengguna ke daftar musik yang telah 
