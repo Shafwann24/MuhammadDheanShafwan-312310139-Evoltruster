@@ -1,6 +1,7 @@
 STORY BOARD
 
-![StoryBoard](https://github.com/user-attachments/assets/b483afbc-e064-454a-b88b-0c3730c16b30)
+![StoryBoard](https://github.com/user-attachments/assets/c7eb7b0b-3d4d-48f1-9838-be536d1e16b3)
+
  <br>
 
  1. Splash Screen 
@@ -72,11 +73,10 @@ dan fokus pada musik.
 o Aksi: Pengguna dapat memutar atau menjeda musik, atau memilih 
 lagu berikutnya atau sebelumnya. 
 7. Bar Navigasi 
-o Deskripsi: Bar navigasi di bagian bawah layar yang memuat tiga ikon 
-utama: Home, Library, dan Profile. 
+o Deskripsi: Bar navigasi di bagian bawah layar yang memuat 2 ikon 
+utama: Library dan Profile. 
 o Elemen Utama: 
-▪ Home: Mengarahkan ke halaman utama. 
-▪ Library: Membawa pengguna ke daftar musik yang telah 
+▪ Library: Mengarahkan ke halaman utama dan membawa pengguna ke daftar musik yang telah 
 disimpan. 
 ▪ Profile: Menuju ke halaman profil pengguna. 
 o Tujuan: Mempermudah pengguna mengakses fitur utama aplikasi 
