@@ -1,142 +1,51 @@
 package com.example.evoltruster;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.media.MediaPlayer;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class login extends AppCompatActivity implements View.OnClickListener {
+import androidx.appcompat.app.AppCompatActivity;
 
-    // Deklarasi views
-    TextView tvTime, tvDuration;
-    SeekBar seekBarTime, seekBarVolume;
-    ImageView btnPlay;
+public class login extends AppCompatActivity {
 
-    MediaPlayer musicPlayer;
+    // Deklarasi komponen
+    private EditText etUsername, etPassword;
+    private Button btnLogin;
+
+    // Username dan password valid
+    private final String validUsername = "Dynamysx";
+    private final String validPassword = "08072004";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
-        // Sembunyikan ActionBar
-        getSupportActionBar().hide();
+        // Inisialisasi komponen
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
 
-        tvTime = findViewById(R.id.tvTime);
-        tvDuration = findViewById(R.id.tvDuration);
-        seekBarTime = findViewById(R.id.seekBarTime);
-        seekBarVolume = findViewById(R.id.seekBarVolume);
-        btnPlay = findViewById(R.id.btnPlay);
-
-        musicPlayer = MediaPlayer.create(this, R.raw.free_sound);
-        musicPlayer.setLooping(true);
-        musicPlayer.seekTo(0);
-        musicPlayer.setVolume(0.5f, 0.5f);
-
-        String duration = millisecondsTostring(musicPlayer.getDuration());
-        tvDuration.setText(duration);
-
-        btnPlay.setOnClickListener(this);
-
-        seekBarVolume.setProgress(50);
-        seekBarVolume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        // Tombol Login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean isfromUser) {
-                float volume = progress / 100f;
-                musicPlayer.setVolume(volume, volume);
-            }
+            public void onClick(View v) {
+                String username = etUsername.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        seekBarTime.setMax(musicPlayer.getDuration());
-        seekBarTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean isfromUser) {
-                if (isfromUser) {
-                    musicPlayer.seekTo(progress);
-                    seekBar.setProgress(progress);
+                if (username.equals(validUsername) && password.equals(validPassword)) {
+                    // Login berhasil, pindah ke MainActivity
+                    Intent intent = new Intent(login.this, ListMusicActivity.class);
+                    startActivity(intent);
+                    finish(); // Tutup halaman login agar tidak bisa kembali
+                } else {
+                    // Login gagal, tampilkan pesan kesalahan
+                    Toast.makeText(login.this, "Username atau Password salah!", Toast.LENGTH_SHORT).show();
                 }
             }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
         });
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (musicPlayer != null) {
-                    if (musicPlayer.isPlaying()) {
-                        try {
-                            final double current = musicPlayer.getCurrentPosition();
-                            final String elapsedTime = millisecondsTostring((int) current);
-
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    tvTime.setText(elapsedTime);
-                                    seekBarTime.setProgress((int) current);
-                                }
-                            });
-
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }).start();
-    } // akhir method onCreate
-
-
-    public String millisecondsTostring(int time) {
-        String elapsedTime = "";
-        int minutes = time / 1000 / 60;
-        int seconds = time / 1000 % 60;
-        elapsedTime = minutes + ":";
-        if (seconds < 10) {
-            elapsedTime += "0";
-        }
-        elapsedTime += seconds;
-
-        return elapsedTime;
-    }
-
-
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.btnPlay) {
-            if (musicPlayer.isPlaying()) {
-                // Sedang memutar
-                musicPlayer.pause();
-                btnPlay.setBackgroundResource(R.drawable.buttonplay);
-            } else {
-                // Sedang berhenti
-                musicPlayer.start();
-                btnPlay.setBackgroundResource(R.drawable.buttonpause);
-            }
-        }
     }
 }

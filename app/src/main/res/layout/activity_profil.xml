@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile"
+    tools:context=".profile">
+
+    <TextView
+        android:id="@+id/tvProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Profile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/ivProfilgojo"
+        android:layout_width="249dp"
+        android:layout_height="214dp"
+        android:layout_below="@id/tvProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/profilgojo" />
+
+    <TextView
+        android:id="@+id/tvIg"
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:layout_below="@id/ivProfilgojo"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/cbold"
+        android:text="Username: Dynamysx"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:backgroundTint="#0D308C"
+        android:fontFamily="@font/cbold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvButtonig"
+        android:layout_marginTop="40dp"
+
+
+
+        />
+
+    <Button
+        android:id="@+id/tvButtonig"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvIg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#26408D"
+        android:fontFamily="@font/cbold"
+        android:text="Insta: @dynamysx"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btnLibrary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Library"
+        android:fontFamily="@font/cbold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="#26408D"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/tvButtonig"
+        />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Profile"
+        android:fontFamily="@font/cbold"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="#26408D"
+        android:textColor="#000000"
+        android:layout_below="@id/tvButtonig"
+        />
+
+</RelativeLayout>

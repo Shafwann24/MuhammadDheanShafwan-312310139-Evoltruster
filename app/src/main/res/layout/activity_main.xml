@@ -8,32 +8,35 @@
     android:padding="16dp"
     android:background="@drawable/play"
     android:gravity="center_horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MusicPlayerActivity">
 
     <TextView
-        android:text="Playing From Library"
+        android:id="@+id/tvTitle"
+        android:text="Eiyuu"
         android:textColor="#fff"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/cbold"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="-50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
 
+
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/fotolib1" />
 
     <TextView
+        android:id="@+id/tvArtist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eiyuu-Nexus"
+        android:text="Nexus"
         android:textColor="#fff"
         android:textSize="25sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="-0dp"
         android:fontFamily="@font/cbold"
         />
 
@@ -100,6 +103,14 @@
             android:layout_height="20dp"
             android:src="@drawable/volumeup" />
     </LinearLayout>
-    
+
+    <TextView
+        android:id="@+id/tvPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#fff"
+        android:layout_marginTop="60dp"
+        />
 
 </LinearLayout>
